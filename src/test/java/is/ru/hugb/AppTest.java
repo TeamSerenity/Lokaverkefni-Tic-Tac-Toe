@@ -31,4 +31,53 @@ public class AppTest
         PrintStream originalOut = System.out;
         System.setOut(originalOut);
     }
+	    
+	@Test public void testBoardMove()
+    {
+        Board board = new Board();
+        
+		Board.placeMove(2,1,'X');
+		
+		board.display()
+		
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+		
+		
+    }
+		@Test public void testBoardMove()
+    {
+        Board board = new Board();
+        
+		Board.placeMove(2,2,'O');
+		
+		board.display()
+		
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |  O|   |" + System.getProperty("line.separator") , os.toString());
+		
+		
+    }
+		@Test public void testBoardMove()
+    {
+        Board board = new Board();
+        
+		Board.placeMove(1,1,'X');
+		
+		board.display()
+		
+		assertEquals("|   |   |   |\n-------------\n|   | X |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+		
+		
+    }
+		@Test public void testBoardMove()
+    {
+        Board board = new Board();
+        
+		Board.placeMove(0,0,'X');
+		
+		board.display()
+		
+		assertEquals("|X  |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+		
+		
+    }
 }
