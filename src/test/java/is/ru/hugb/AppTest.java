@@ -3,6 +3,8 @@
  */
 package is.ru.hugb;
 
+import java.io.*;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -12,5 +14,21 @@ public class AppTest
     {
         Board board = new Board();
         assertNotNull(board.getBoard());
+    }
+
+    @Test public void testBoardDisplay()
+    {
+        Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+
+        board.display();
+
+        assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |   |   |" + System.getProperty("line.separator") , os.toString());
+
+        PrintStream originalOut = System.out;
+        System.setOut(originalOut);
     }
 }

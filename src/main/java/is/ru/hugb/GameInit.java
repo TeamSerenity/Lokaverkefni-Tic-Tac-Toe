@@ -2,8 +2,10 @@ package is.ru.hugb;
 
 public class GameInit{
 
-	public static void main(String[] args){
-		//System.out.println(new GameInit().getGreeting());
+	public static void main(String[] args)
+	{
+		Board board = new Board();
+		board.display();
 
 		//initialize an array of arrays to reprisent the playing grid from parameters
 
