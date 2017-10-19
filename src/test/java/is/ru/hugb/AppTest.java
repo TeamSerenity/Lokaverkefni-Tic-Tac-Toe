@@ -7,8 +7,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        GameInit classUnderTest = new GameInit();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+
+    @Test public void testBoard() {
+        Board board = new Board();
+        //System.out.println("hello");
+        assertNotNull(board.getBoard());
     }
 }
