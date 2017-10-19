@@ -3,7 +3,7 @@ package is.ru.hugb;
 public class GameInit{
 
 	public static void main(String[] args){
-		System.out.println(new GameInit().getGreeting());
+		System.out.println("Hello World");
 
 		//initialize an array of arrays to reprisent the playing grid from parameters 
 
