@@ -3,18 +3,95 @@
  */
 package is.ru.hugb;
 
+import java.io.*;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class AppTest {
-    @Test public void testAppHasAGreeting() {
-        GameInit classUnderTest = new GameInit();
-        //assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+public class AppTest
+{
+    @Test public void testBoard()
+    {
+        Board board = new Board();
+        assertNotNull(board.getBoard());
     }
-        @Test public void testActionIsLegal() {
-        Gameplay classUnderTest = new Gameplay();
-        char playerid = 'X';
-		char bord[][] = {{'0','0','0'},{'0','0','0'},{'0','0','0'}};
-        //assertTrue("Action should be legal", classUnderTest.islegal(bord, playerid, a, b));
+
+    @Test public void testBoardDisplay()
+    {
+        Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+
+        board.display();
+
+        assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |   |   |" + System.getProperty("line.separator") , os.toString());
+
+        PrintStream originalOut = System.out;
+        System.setOut(originalOut);
+    }
+	    
+	@Test public void testBoardMove1()
+    {
+        Board board = new Board();
+
+         OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+        
+		board.placeMove(2,1,'X');
+		
+		board.display();
+		
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+			
+    }
+		@Test public void testBoardMove2()
+    {
+        Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+        
+		board.placeMove(2,1,'O');
+		
+		board.display();
+		
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | O |   |" + System.getProperty("line.separator") , os.toString());
+		
+    }
+		@Test public void testBoardMove3()
+    {
+        Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+        
+		board.placeMove(1,1,'X');
+		board.placeMove(2,1,'X');
+		
+		board.display();
+		
+		assertEquals("|   |   |   |\n-------------\n|   | X |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+		
+    }
+		@Test public void testBoardMove4()
+    {
+        Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+        
+		board.placeMove(0,0,'X');
+		board.placeMove(2,1,'X');
+		
+		board.display();
+		
+		assertEquals("| X |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+			
     }
 }

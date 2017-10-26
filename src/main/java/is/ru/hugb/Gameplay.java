@@ -5,30 +5,33 @@ import java.util.Scanner;
 
 public class Gameplay
 {
-   public char[][] action(char bord[][], char playerid)
+   public Board action(Board board, char playerid)
    {
    	   Boolean legal = true;
        while (legal)
        {
            int a = cin("row");
            int b = cin("collum");
-           legal = islegal(bord,playerid, a, b);
+           a = a-1;
+           b = b-1;
+           legal = islegal(board,playerid, a, b);
        }
-        return bord;
+        return board;
    }
 
-   private Boolean islegal(char[][] bord, char playerid, int a, int b)
+   private Boolean islegal(Board board, char playerid, int a, int b)
    {
-       if ((0 < a && a <4)&&(0 < b && b <4))
+   	char bord[][] = board.getBoard();
+       if ((-1 < a && a <3)&&(-1 < b && b <3))
        {
-           if (bord[a-1][b-1] != '0')
+           if (bord[a][b] != ' ')
            {
                System.out.println("This area is already taken");
                return true;
            }
            else
            {
-               bord[a-1][b-1] = playerid;
+               board.placeMove(a, b, playerid);
                return false;
            }
        }
@@ -42,11 +45,20 @@ public class Gameplay
    {
        System.out.println("Please enter the "+ message + " where you want to place your mark 1 - 3");
        Scanner scan = new Scanner( System.in );
+       int foo = -1;
        if(scan.hasNext())
        {
-       		String input = scan.nextLine();
-       		return Integer.parseInt(input);
-       	}
+       	    String input = scan.nextLine();
+       		try
+       		{
+       			foo = Integer.parseInt(input);
+       			return foo;
+       		}
+       		catch(NumberFormatException e)
+       		{
+       			return foo;
+       		}
+       }
        return 1;
    }
 }
