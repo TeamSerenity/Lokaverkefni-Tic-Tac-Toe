@@ -10,35 +10,36 @@ import static org.junit.Assert.*;
 
 public class AppTest
 {
-    @Test public void testBoard()
-    {
-        Board board = new Board();
-        assertNotNull(board.getBoard());
-    }
+	//### Board test ###
+	@Test public void testBoard()
+	{
+		Board board = new Board();
+		assertNotNull(board.getBoard());
+	}
 
-    @Test public void testBoardDisplay()
-    {
-        Board board = new Board();
+	@Test public void testBoardDisplay()
+	{
+		Board board = new Board();
 
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
 
-        board.display();
+		board.display();
 
-        assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |   |   |" + System.getProperty("line.separator") , os.toString());
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |   |   |" + System.getProperty("line.separator") , os.toString());
 
-        PrintStream originalOut = System.out;
-        System.setOut(originalOut);
-    }
+		PrintStream originalOut = System.out;
+		System.setOut(originalOut);
+	}
 	    
 	@Test public void testBoardMove1()
-    {
-        Board board = new Board();
+	{
+		Board board = new Board();
 
-         OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
         
 		board.placeMove(2,1,'X');
 		
@@ -46,14 +47,15 @@ public class AppTest
 		
 		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 			
-    }
-		@Test public void testBoardMove2()
-    {
-        Board board = new Board();
+	}
 
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
+	@Test public void testBoardMove2()
+	{
+		Board board = new Board();
+
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
         
 		board.placeMove(2,1,'O');
 		
@@ -61,14 +63,15 @@ public class AppTest
 		
 		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | O |   |" + System.getProperty("line.separator") , os.toString());
 		
-    }
-		@Test public void testBoardMove3()
-    {
-        Board board = new Board();
+	}
 
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
+	@Test public void testBoardMove3()
+	{
+		Board board = new Board();
+
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
         
 		board.placeMove(1,1,'X');
 		board.placeMove(2,1,'X');
@@ -77,14 +80,15 @@ public class AppTest
 		
 		assertEquals("|   |   |   |\n-------------\n|   | X |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 		
-    }
-		@Test public void testBoardMove4()
-    {
-        Board board = new Board();
+	}
 
-        OutputStream os = new ByteArrayOutputStream();
-        PrintStream ps = new PrintStream(os);
-        System.setOut(ps);
+	@Test public void testBoardMove4()
+    {
+		Board board = new Board();
+
+		OutputStream os = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(os);
+		System.setOut(ps);
         
 		board.placeMove(0,0,'X');
 		board.placeMove(2,1,'X');
@@ -92,6 +96,110 @@ public class AppTest
 		board.display();
 		
 		assertEquals("| X |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
-			
-    }
+
+	}
+
+	//### WinnerCheck Test ###
+	@Test public void testWinnerX()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'X');
+		b.placeMove(0,2, 'X');
+		b.placeMove(0,1, 'X');
+		WinnerCheck winnChe = new WinnerCheck(b);
+
+		assertEquals(true, winnChe.isWinner('X'));
+
+	}
+
+	@Test public void testWinnerO()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(0,2, 'O');
+		b.placeMove(0,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(0,2, 'O');
+		b.placeMove(0,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal1()
+	{
+		Board b = new Board();
+		b.placeMove(1,0, 'O');
+		b.placeMove(1,2, 'O');
+		b.placeMove(1,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal2()
+	{
+		Board b = new Board();
+		b.placeMove(2,0, 'O');
+		b.placeMove(2,2, 'O');
+		b.placeMove(2,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(1,0, 'O');
+		b.placeMove(2,0, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical1()
+	{
+		Board b = new Board();
+		b.placeMove(0,1, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical2()
+	{
+		Board b = new Board();
+		b.placeMove(0,2, 'O');
+		b.placeMove(1,2, 'O');
+		b.placeMove(2,2, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerDiagonal()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,2, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerDiagonal1()
+	{
+		Board b = new Board();
+		b.placeMove(0,2, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,0, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
 }
