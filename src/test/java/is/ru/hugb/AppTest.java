@@ -15,8 +15,6 @@ public class AppTest {
         Gameplay classUnderTest = new Gameplay();
         char playerid = 'X';
 		char bord[][] = {{'0','0','0'},{'0','0','0'},{'0','0','0'}};
-		int a = 1;
-		int b = 1;
-        assertTrue("Action should be legal", classUnderTest.islegal(bord, playerid, a, b));
+        //assertTrue("Action should be legal", classUnderTest.islegal(bord, playerid, a, b));
     }
 }
