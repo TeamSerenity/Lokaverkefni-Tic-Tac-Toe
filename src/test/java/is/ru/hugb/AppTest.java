@@ -10,6 +10,7 @@ import static org.junit.Assert.*;
 
 public class AppTest
 {
+	//### Board test ###
 	@Test public void testBoard()
 	{
 		Board board = new Board();
@@ -96,5 +97,109 @@ public class AppTest
 		
 		assertEquals("| X |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 
+	}
+
+	//### WinnerCheck Test ###
+	@Test public void testWinnerX()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'X');
+		b.placeMove(0,2, 'X');
+		b.placeMove(0,1, 'X');
+		WinnerCheck winnChe = new WinnerCheck(b);
+
+		assertEquals(true, winnChe.isWinner('X'));
+
+	}
+
+	@Test public void testWinnerO()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(0,2, 'O');
+		b.placeMove(0,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(0,2, 'O');
+		b.placeMove(0,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal1()
+	{
+		Board b = new Board();
+		b.placeMove(1,0, 'O');
+		b.placeMove(1,2, 'O');
+		b.placeMove(1,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerHorizontal2()
+	{
+		Board b = new Board();
+		b.placeMove(2,0, 'O');
+		b.placeMove(2,2, 'O');
+		b.placeMove(2,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(1,0, 'O');
+		b.placeMove(2,0, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical1()
+	{
+		Board b = new Board();
+		b.placeMove(0,1, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,1, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerVertical2()
+	{
+		Board b = new Board();
+		b.placeMove(0,2, 'O');
+		b.placeMove(1,2, 'O');
+		b.placeMove(2,2, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerDiagonal()
+	{
+		Board b = new Board();
+		b.placeMove(0,0, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,2, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
+	}
+
+	@Test public void testWinnerDiagonal1()
+	{
+		Board b = new Board();
+		b.placeMove(0,2, 'O');
+		b.placeMove(1,1, 'O');
+		b.placeMove(2,0, 'O');
+		WinnerCheck winnChe = new WinnerCheck(b);
+		assertEquals(true, winnChe.isWinner('O'));
 	}
 }

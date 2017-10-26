@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.hugb.AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-10-26T17:30:44" hostname="Fangorn" time="0.005">
+<testsuite name="is.ru.hugb.AppTest" tests="16" skipped="0" failures="0" errors="0" timestamp="2017-10-26T17:47:33" hostname="DESKTOP-5OU9MVV" time="0.007">
   <properties/>
   <testcase name="testBoardDisplay" classname="is.ru.hugb.AppTest" time="0.002"/>
-  <testcase name="testBoard" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testBoard" classname="is.ru.hugb.AppTest" time="0.001"/>
+  <testcase name="testWinnerVertical" classname="is.ru.hugb.AppTest" time="0.001"/>
+  <testcase name="testWinnerVertical1" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerVertical2" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerHorizontal1" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerHorizontal2" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerHorizontal" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerDiagonal" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerO" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerX" classname="is.ru.hugb.AppTest" time="0.0"/>
   <testcase name="testBoardMove1" classname="is.ru.hugb.AppTest" time="0.0"/>
   <testcase name="testBoardMove2" classname="is.ru.hugb.AppTest" time="0.0"/>
-  <testcase name="testBoardMove3" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testBoardMove3" classname="is.ru.hugb.AppTest" time="0.001"/>
   <testcase name="testBoardMove4" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testWinnerDiagonal1" classname="is.ru.hugb.AppTest" time="0.001"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
