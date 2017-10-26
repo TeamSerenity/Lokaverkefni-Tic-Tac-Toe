@@ -32,51 +32,69 @@ public class AppTest
         System.setOut(originalOut);
     }
 	    
-	@Test public void testBoardMove()
+	@Test public void testBoardMove1()
     {
         Board board = new Board();
+
+         OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
         
-		Board.placeMove(2,1,'X');
+		board.placeMove(2,1,'X');
 		
-		board.display()
+		board.display();
 		
 		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 		
 		
     }
-		@Test public void testBoardMove()
+		@Test public void testBoardMove2()
     {
         Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
         
-		Board.placeMove(2,2,'O');
+		board.placeMove(2,1,'O');
 		
-		board.display()
+		board.display();
 		
-		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   |  O|   |" + System.getProperty("line.separator") , os.toString());
+		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | O |   |" + System.getProperty("line.separator") , os.toString());
 		
 		
     }
-		@Test public void testBoardMove()
+		@Test public void testBoardMove3()
     {
         Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
         
-		Board.placeMove(1,1,'X');
+		board.placeMove(1,1,'X');
+		board.placeMove(2,1,'X');
 		
-		board.display()
+		board.display();
 		
 		assertEquals("|   |   |   |\n-------------\n|   | X |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 		
 		
     }
-		@Test public void testBoardMove()
+		@Test public void testBoardMove4()
     {
         Board board = new Board();
+
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
         
-		Board.placeMove(0,0,'X');
+		board.placeMove(0,0,'X');
+		board.placeMove(2,1,'X');
 		
-		board.display()
+		board.display();
 		
-		assertEquals("|X  |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
+		assertEquals("| X |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 		
 		
     }
