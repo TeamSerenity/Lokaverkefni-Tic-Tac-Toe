@@ -5,8 +5,6 @@ import java.util.Scanner;
 
 public class Gameplay
 {
-   //private static Scanner scanner = new Scanner( System.in );
-
    public char[][] action(char bord[][], char playerid)
    {
    	   Boolean legal = true;
