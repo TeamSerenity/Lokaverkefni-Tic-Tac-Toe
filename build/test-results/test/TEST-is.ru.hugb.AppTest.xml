@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.hugb.AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-10-26T15:03:04" hostname="LAPTOP-AHJ9NNGU" time="0.004">
+<testsuite name="is.ru.hugb.AppTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2017-10-26T17:20:52" hostname="LAPTOP-AHJ9NNGU" time="0.006">
   <properties/>
-  <testcase name="testBoardDisplay" classname="is.ru.hugb.AppTest" time="0.002"/>
-  <testcase name="testBoard" classname="is.ru.hugb.AppTest" time="0.0"/>
+  <testcase name="testBoardDisplay" classname="is.ru.hugb.AppTest" time="0.004"/>
+  <testcase name="testBoard" classname="is.ru.hugb.AppTest" time="0.001"/>
   <testcase name="testBoardMove1" classname="is.ru.hugb.AppTest" time="0.0"/>
   <testcase name="testBoardMove2" classname="is.ru.hugb.AppTest" time="0.001"/>
   <testcase name="testBoardMove3" classname="is.ru.hugb.AppTest" time="0.0"/>
