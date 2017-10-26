@@ -3,7 +3,11 @@ package is.ru.hugb;
 public class GameInit{
 
 	public static void main(String[] args){
-		System.out.println(new GameInit().getGreeting());
+		char playerid = 'X';
+		char bord[][] = {{'0','0','0'},{'0','0','0'},{'0','0','0'}};
+		System.out.println("it's player " + playerid + "'s turn!");
+		Gameplay gameplay = new Gameplay();
+		gameplay.action(bord, playerid);
 
 		//initialize an array of arrays to reprisent the playing grid from parameters 
 
