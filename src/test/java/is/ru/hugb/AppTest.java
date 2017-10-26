@@ -45,8 +45,7 @@ public class AppTest
 		board.display();
 		
 		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
-		
-		
+			
     }
 		@Test public void testBoardMove2()
     {
@@ -61,7 +60,6 @@ public class AppTest
 		board.display();
 		
 		assertEquals("|   |   |   |\n-------------\n|   |   |   |\n-------------\n|   | O |   |" + System.getProperty("line.separator") , os.toString());
-		
 		
     }
 		@Test public void testBoardMove3()
@@ -79,7 +77,6 @@ public class AppTest
 		
 		assertEquals("|   |   |   |\n-------------\n|   | X |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
 		
-		
     }
 		@Test public void testBoardMove4()
     {
@@ -95,7 +92,6 @@ public class AppTest
 		board.display();
 		
 		assertEquals("| X |   |   |\n-------------\n|   |   |   |\n-------------\n|   | X |   |" + System.getProperty("line.separator") , os.toString());
-		
-		
+			
     }
 }

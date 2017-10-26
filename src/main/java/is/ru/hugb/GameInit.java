@@ -4,10 +4,11 @@ public class GameInit{
 
 	public static void main(String[] args)
 	{
+		//Initialize starting variables
+		char playerID = 'X';
+		//initialize an array of arrays to reprisent the playing grid from parameters
 		Board board = new Board();
 		board.display();
-
-		//initialize an array of arrays to reprisent the playing grid from parameters
 
 		//Repeat until winner is found
 			//player makes a turn
