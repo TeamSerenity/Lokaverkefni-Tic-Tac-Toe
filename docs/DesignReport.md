@@ -45,8 +45,13 @@ _Klasar_ skrifaðir með **Pascal Casing**.
 **Nemendur**
 
 Haukur Júlíus Arnarsson
+
 Kristján Einarsson
+
 Egill M. Halldórsson
+
 Sigvaldi Kárason
+
 Oddur Kröyer Árnarson
+
 Bergvin Þór Gíslason
